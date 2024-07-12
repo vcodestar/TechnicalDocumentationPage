@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Cypress QA Testing Tool Documentation</title>
+  <link rel="stylesheet" href="technical_documentation_page.css">
+</head>
+<body>
+  <nav id="navbar">
+    <header><h1>Cypress Documentation</h1></header>
+    <a class="nav-link" href="#Introduction">Introduction</a>
+    <a class="nav-link" href="#Installation">Installation</a>
+    <a class="nav-link" href="#Writing_Tests">Writing Tests</a>
+    <a class="nav-link" href="#Running_Tests">Running Tests</a>
+    <a class="nav-link" href="#Best_Practices">Best Practices</a>
+  </nav>
+  <main id="main-doc">
+    <section class="main-section" id="Introduction">
+      <header><h2>Introduction</h2></header>
+      <p>Cypress is a next-generation front-end testing tool built for the modern web.</p>
+      <p>It addresses the key pain points developers and QA engineers face when testing modern applications.</p>
+      <p>Cypress is fast, reliable, and easy to use.</p>
+    </section>
+    <section class="main-section" id="Installation">
+      <header><h2>Installation</h2></header>
+      <p>To install Cypress, follow these steps:</p>
+      <p>Open your terminal.</p>
+      <p>Run the command: <code>npm install cypress --save-dev</code></p>
+      <p>Once installed, open Cypress with the command: <code>npx cypress open</code></p>
+    </section>
+    <section class="main-section" id="Writing_Tests">
+      <header><h2>Writing Tests</h2></header>
+      <p>Writing tests in Cypress is straightforward.</p>
+      <p>Here’s an example of a basic test:</p>
+      <pre>
+        <code>
+describe('My First Test', () => {
+  it('Visits the Kitchen Sink', () => {
+    cy.visit('https://example.cypress.io')
+    cy.contains('type').click()
+    cy.url().should('include', '/commands/actions')
+  })
+})
+        </code>
+      </pre>
+      <p>This test visits a page, finds a link with the text "type", clicks it, and then checks if the URL includes "/commands/actions".</p>
+    </section>
+    <section class="main-section" id="Running_Tests">
+      <header><h2>Running Tests</h2></header>
+      <p>You can run tests in Cypress using the Test Runner or from the command line.</p>
+      <p>To run tests from the command line, use the command:</p>
+      <pre><code>npx cypress run</code></pre>
+      <p>For more options, refer to the official Cypress documentation.</p>
+      <p>The Test Runner provides an interactive interface to run and debug tests.</p>
+    </section>
+    <section class="main-section" id="Best_Practices">
+      <header><h2>Best Practices</h2></header>
+      <p>Here are some best practices to follow when using Cypress:</p>
+      <ul>
+        <li>Keep tests isolated and independent.</li>
+        <li>Avoid using <code>cy.wait()</code> for arbitrary periods of time.</li>
+        <li>Leverage Cypress’ built-in retry-ability.</li>
+        <li>Use fixtures for static data.</li>
+        <li>Organize tests and structure them logically.</li>
+      </ul>
+      <p>Following these best practices will help ensure your tests are reliable and maintainable.</p>
+      <p>Cypress provides extensive documentation and examples to help you get started.</p>
+    </section>
+  </main>
+</body>
+</html>
